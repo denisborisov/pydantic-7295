@@ -1,0 +1,36 @@
+[build-system]
+
+# Once this is present, a PEP 517 frontend like pip can build and install the project from source
+# without the need for Poetry or any of its dependencies.
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core"]
+
+# -------------------------------------------------------------------------------------------------
+
+[tool.poetry]
+
+# The authors of the package.
+authors = ["Denis Borisov <denis.borisov@hotmail.com>"]
+
+# A short description of the package.
+description = "PostgresDsn fails for multiple hosts #7295"
+
+# The name of the package.
+name = "pydantic-7295"
+
+# The version of the package.
+version = "0.1.0"
+
+# -------------------------------------------------------------------------------------------------
+
+[tool.poetry.dependencies]
+
+alembic = "^1.10.3"
+fastapi = "^0.100.0"
+fastapi-async-sqlalchemy = "^0.5.0"
+psycopg = {extras = ["binary"], version = "^3.1.10"}  # because asyncpg cannot resolve multihost connection strings
+pydantic = "^2.1.0"
+pydantic-settings = "^2.0.2"
+python = "^3.11"
+sqlalchemy = { extras = ["asyncio"], version = "^2.0.11" }
+uvicorn = "^0.22.0"

@@ -1,0 +1,7 @@
+# directories
+__pycache__
+.mypy_cache
+.venv
+
+# files
+poetry.lock
